@@ -5,22 +5,24 @@ import Navbar from "./components/navbar/navbar";
 import ProductsPage from "./pages/products/productsPage";
 import ProductPage from "./pages/productPage/productPage";
 import HomePage from "./pages/homepage/homePage";
+import AboutPage from "./pages/aboutPage/aboutPage";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          {/* Define the routes for the app */}
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/:id" element={<ProductPage />} />
-          {/* Add route for ProductsPage */}
-        </Routes>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:id" element={<ProductPage />} />
+          </Routes>
+        </main>
         <Footer />
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

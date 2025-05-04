@@ -58,7 +58,7 @@ const ProductsPage = () => {
   const currentProducts = filteredProducts.slice(indexOfFirst, indexOfLast);
 
   return (
-    <div className="bg-gray-500 mx-auto px-4 lg:px-8 py-10 flex flex-col lg:flex-row gap-6">
+    <div className="mx-auto px-4 lg:px-8 py-10 flex flex-col lg:flex-row gap-6">
       <FiltersSidebar
         products={allProducts}
         selectedCategories={selectedCategories}

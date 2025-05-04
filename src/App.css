@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+body {
+  background: url("/main-bg4.avif") no-repeat center center fixed;
+  background-size: cover;
+}

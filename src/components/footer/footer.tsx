@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-zinc-900 text-zinc-100 p-10">
+    <footer className="footer footer-horizontal footer-center bg-zinc-900 text-zinc-100 p-6">
       <aside>
         <svg
           width="50"
@@ -24,8 +25,8 @@ const Footer: React.FC = () => {
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-6">
-          <a href="/" className="link link-hover">Home</a>
-          <a href="/products" className="link link-hover">Products</a>
+          <Link to="/about-us" className="link link-hover">About</Link>
+          <Link to="/products" className="link link-hover">Products</Link>
         </div>
         <div className="grid grid-flow-col gap-4 mt-4">
           <a>

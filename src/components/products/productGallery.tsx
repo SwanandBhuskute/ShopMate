@@ -24,7 +24,7 @@ const ProductGallery = ({ products }: { products: Product[] }) => {
               {product.description.slice(0, 50)}...
             </p>
             <div className="card-actions justify-between mt-4">
-              <span className="text-amber-600 font-bold">${product.price}</span>
+              <span className="text-amber-600 text-lg font-bold">${product.price}</span>
               {/* <button className="btn btn-primary btn-sm">Buy</button> */}
             </div>
           </div>

@@ -12,7 +12,7 @@ const ProductDetail = (props: {
   const relatedProducts: Product[] = props.relatedProducts;
 
   return (
-    <div className="bg-gray-500 text-white p-4">
+    <div className="text-white p-4">
       {/* Main Product Section */}
       <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
