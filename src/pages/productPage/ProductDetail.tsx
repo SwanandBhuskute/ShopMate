@@ -12,12 +12,12 @@ const ProductDetail = (props: {
   const relatedProducts: Product[] = props.relatedProducts;
 
   return (
-    <div className="text-gray-800 bg-white">
+    <div className="bg-gray-500 text-white p-4">
       {/* Main Product Section */}
       <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Image */}
-          <div className="w-full rounded-xl overflow-hidden border border-gray-200">
+          <div className="bg-white w-full rounded-xl overflow-hidden border border-gray-200">
             <img
               src={product.thumbnail}
               alt={product.title}
@@ -28,9 +28,9 @@ const ProductDetail = (props: {
           {/* Product Info */}
           <div className="space-y-6">
             <h1 className="text-4xl font-bold">{product.title}</h1>
-            <p className="text-lg text-gray-600">{product.description}</p>
+            <p className="text-lg ">{product.description}</p>
             <div className="flex items-center space-x-6 pt-4">
-              <span className="text-3xl font-semibold text-amber-600">
+              <span className="text-3xl font-bold text-black">
                 ${product.price}
               </span>
               {/* <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-full text-lg shadow-md transition-all duration-300">
@@ -38,7 +38,7 @@ const ProductDetail = (props: {
               </button> */}
             </div>
 
-            <ul className="text-gray-700 text-base space-y-1 mt-6">
+            <ul className="text-base space-y-1 ">
               {product.brand && (
                 <li>
                   <strong>Brand:</strong> {product.brand}
@@ -75,12 +75,12 @@ const ProductDetail = (props: {
             </ul>
             {/* 🆕 Extra Info Grid */}
             <div className="mt-1">
-              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4">
+              <div className="rounded-xl shadow-lg border border-gray-100 p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                   {/* Shipping Info */}
                   <div className="p-2 bg-gray-50 rounded-lg">
                     <div className="flex items-center gap-2 text-amber-600">
-                      <FaTruck className="text-xl" />
+                      <FaTruck className="text-2xl" />
                       <span className="text-sm text-gray-700">
                         {product.shippingInformation}
                       </span>
@@ -90,7 +90,7 @@ const ProductDetail = (props: {
                   {/* Return Policy */}
                   <div className="p-2 bg-gray-50 rounded-lg">
                     <div className="flex items-center gap-2 text-blue-600">
-                      <BsArrowReturnLeft className="text-xl" />
+                      <BsArrowReturnLeft className="text-2xl" />
                       <span className="text-sm text-gray-700">
                         {product.returnPolicy}
                       </span>
@@ -100,7 +100,7 @@ const ProductDetail = (props: {
                   {/* Warranty Info */}
                   <div className="p-2 bg-gray-50 rounded-lg">
                     <div className="flex items-center gap-2 text-green-600">
-                      <AiOutlineSafetyCertificate className="text-xl" />
+                      <AiOutlineSafetyCertificate className="text-2xl" />
                       <span className="text-sm text-gray-700">
                         {product.warrantyInformation}
                       </span>
@@ -110,7 +110,7 @@ const ProductDetail = (props: {
                   {/* Barcode / QR */}
                   <div className="p-2 bg-gray-50 rounded-lg">
                     <div className="flex items-center gap-2 text-purple-600">
-                      <AiOutlineBarcode className="text-xl" />
+                      <AiOutlineBarcode className="text-2xl" />
                       <span className="text-sm text-gray-700 mb-2">
                         <strong>Barcode:</strong> {product.meta.barcode}
                       </span>
@@ -163,10 +163,10 @@ const ProductDetail = (props: {
       {/* Related Products */}
       <section className="mb-6">
         <div className="max-w-7xl mx-auto text-center mb-12">
-          <h3 className="text-3xl font-extrabold text-gray-800">
+          <h3 className="text-4xl font-extrabold">
             You might also like
           </h3>
-          <p className="text-gray-600 mt-2">
+          <p className="mt-2 text-xl">
             Similar picks from our store curated for you.
           </p>
         </div>
@@ -183,7 +183,7 @@ const ProductDetail = (props: {
                 </figure>
                 <div className="card-body flex flex-row items-center justify-between">
                   <h2 className="card-title text-gray-800">
-                    {rp.title.slice(0, 20)}...
+                    {rp.title.slice(0,20)}...
                   </h2>
                   <div className="card-actions justify-end">
                     <button className="btn btn-primary text-sm">Buy Now</button>

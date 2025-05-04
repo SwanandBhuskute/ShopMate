@@ -8,7 +8,7 @@ const HeroSection = (props: { products: Product[] }) => {
     .slice(0, 3);
 
   return (
-    <section className="bg-black text-white py-20 px-4 sm:px-8 lg:px-20">
+    <section className="bg-gray-500 text-white py-20 px-4 sm:px-8 lg:px-20">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Column - Text */}
         <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">

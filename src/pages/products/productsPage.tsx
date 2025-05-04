@@ -58,46 +58,32 @@ const ProductsPage = () => {
   const currentProducts = filteredProducts.slice(indexOfFirst, indexOfLast);
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-10 flex flex-col lg:flex-row gap-6">
-        {/* Sidebar with dark glass effect */}
-        <div className="w-full lg:w-1/4 bg-black/40 backdrop-blur-md rounded-xl p-4 shadow-xl border border-gray-700">
-          <FiltersSidebar
-            products={allProducts}
-            selectedCategories={selectedCategories}
-            setSelectedCategories={setSelectedCategories}
-            priceRange={priceRange}
-            setPriceRange={setPriceRange}
-            sortOrder={sortOrder}
-            setSortOrder={setSortOrder}
-            resetFilters={() => {
-              setSelectedCategories([]);
-              setPriceRange([0, 500]);
-              setSearchTerm("");
-              setSortOrder("");
-            }}
-          />
-        </div>
+    <div className="bg-gray-500 mx-auto px-4 lg:px-8 py-10 flex flex-col lg:flex-row gap-6">
+      <FiltersSidebar
+        products={allProducts}
+        selectedCategories={selectedCategories}
+        setSelectedCategories={setSelectedCategories}
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        resetFilters={() => {
+          setSelectedCategories([]);
+          setPriceRange([0, 500]);
+          setSearchTerm("");
+          setSortOrder("");
+        }}
+      />
 
-        {/* Main content */}
-        <div className="flex-1 flex flex-col gap-6">
-          <div className="bg-black/40 backdrop-blur-md rounded-xl p-4 shadow-xl border border-gray-700">
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          </div>
-
-          <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 shadow-xl border border-gray-700">
-            <ProductGallery products={currentProducts} />
-          </div>
-
-          <div className="bg-black/40 backdrop-blur-md rounded-xl p-4 shadow-xl border border-gray-700">
-            <Pagination
-              totalItems={filteredProducts.length}
-              itemsPerPage={productsPerPage}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            />
-          </div>
-        </div>
+      <div className="flex-1">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <ProductGallery products={currentProducts} />
+        <Pagination
+          totalItems={filteredProducts.length}
+          itemsPerPage={productsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </div>
   );
