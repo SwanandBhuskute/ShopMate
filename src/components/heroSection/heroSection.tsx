@@ -44,7 +44,7 @@ const HeroSection = (props: { products: Product[] }) => {
         {/* Right Column - Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <img
-            src="src/assets/hero-img.avif"
+            src="public/hero-img.avif"
             alt="hero image"
             className="w-full max-w-[500px] sm:max-w-[600px] h-auto rounded-xl shadow-2xl"
           />
