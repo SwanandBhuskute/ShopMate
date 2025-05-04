@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../data/getProducts";
 import { Product } from "../../models/Products.model";
-import FiltersSidebar from "./filtersSidebar";
-import Pagination from "./pagination";
-import SearchBar from "./searchBar";
-import ProductGallery from "./ProductGallery";
+import FiltersSidebar from "../../components/products/filtersSidebar";
+import Pagination from "../../components/products/pagination";
+import SearchBar from "../../components/products/searchBar";
+import ProductGallery from "../../components/products/productGallery"
 
 const ProductsPage = () => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
