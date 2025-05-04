@@ -5,7 +5,6 @@ import { getProducts } from "../../data/getProducts";
 import { Product } from "../../models/Products.model";
 import ProductDetail from "./ProductDetail";
 
-
 const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);

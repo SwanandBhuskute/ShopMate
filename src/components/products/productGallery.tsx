@@ -11,7 +11,7 @@ const ProductGallery = ({ products }: { products: Product[] }) => {
           to={`/products/${product.id}`}
           className="card bg-white shadow-lg hover:shadow-xl transition-transform hover:scale-[1.02] rounded-xl overflow-hidden"
         >
-          <figure className="bg-yellow-100 p-4">
+          <figure className="bg-orange-200 p-4">
             <img
               src={product.thumbnail}
               alt={product.title}

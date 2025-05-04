@@ -4,7 +4,7 @@ import { Product } from "../../models/Products.model";
 import FiltersSidebar from "../../components/products/filtersSidebar";
 import Pagination from "../../components/products/pagination";
 import SearchBar from "../../components/products/searchBar";
-import ProductGallery from "../../components/products/productGallery"
+import ProductGallery from "../../components/products/productGallery";
 
 const ProductsPage = () => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -52,6 +52,10 @@ const ProductsPage = () => {
     setFilteredProducts(result);
     setCurrentPage(1);
   }, [searchTerm, selectedCategories, priceRange, sortOrder, allProducts]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   const indexOfLast = currentPage * productsPerPage;
   const indexOfFirst = indexOfLast - productsPerPage;

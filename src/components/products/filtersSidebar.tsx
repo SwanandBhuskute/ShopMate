@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Product } from "../../models/Products.model";
 
 interface Props {
@@ -21,6 +22,8 @@ const FiltersSidebar = ({
   setSortOrder,
   resetFilters,
 }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const categories = Array.from(new Set(products.map((p) => p.category)));
 
   const toggleCategory = (cat: string) => {
@@ -36,77 +39,94 @@ const FiltersSidebar = ({
   };
 
   return (
-    <aside className="w-full lg:w-64 space-y-6 bg-white rounded-xl border border-gray-200 p-6 shadow">
-      <h3 className="text-xl font-bold text-gray-800">Filters</h3>
-
-      {/* Price Range */}
-      <div>
-        <h4 className="font-semibold mb-2">Price Range</h4>
-        <input
-          type="range"
-          min="0"
-          max="500"
-          step="10"
-          value={priceRange[1]}
-          onChange={(e) =>
-            setPriceRange([priceRange[0], parseInt(e.target.value)])
-          }
-          className="range range-primary"
-        />
-        <div className="text-sm text-gray-600 mt-1">Under ${priceRange[1]}</div>
+    <>
+      {/* Mobile Toggle Button */}
+      <div className="lg:hidden mb-4">
+        <button
+          className="btn btn-outline w-full"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? "Hide Filters" : "Show Filters"}
+        </button>
       </div>
 
-      {/* Sort Buttons */}
-      <div>
-        <h4 className="font-semibold mb-2">Sort By</h4>
-        <div className="flex flex-col gap-2">
-          <label className="label cursor-pointer justify-start gap-2">
-            <input
-              type="checkbox"
-              className="checkbox checkbox-sm"
-              checked={sortOrder === "lowToHigh"}
-              onChange={() => toggleSortOrder("lowToHigh")}
-            />
-            <span className="label-text">Price: Low to High</span>
-          </label>
-          <label className="label cursor-pointer justify-start gap-2">
-            <input
-              type="checkbox"
-              className="checkbox checkbox-sm"
-              checked={sortOrder === "highToLow"}
-              onChange={() => toggleSortOrder("highToLow")}
-            />
-            <span className="label-text">Price: High to Low</span>
-          </label>
+      {/* Filters Container */}
+      <aside
+        className={`space-y-6 bg-white rounded-xl border border-gray-200 p-6 shadow 
+        ${isOpen ? "block" : "hidden"} 
+        lg:block w-full lg:w-64`}
+      >
+        <h3 className="text-xl font-bold text-gray-800">Filters</h3>
+
+        {/* Price Range */}
+        <div>
+          <h4 className="font-semibold mb-2">Price Range</h4>
+          <input
+            type="range"
+            min="0"
+            max="500"
+            step="10"
+            value={priceRange[1]}
+            onChange={(e) =>
+              setPriceRange([priceRange[0], parseInt(e.target.value)])
+            }
+            className="range range-primary"
+          />
+          <div className="text-sm text-gray-600 mt-1">Under ${priceRange[1]}</div>
         </div>
-      </div>
 
-      {/* Categories */}
-      <div>
-        <h4 className="font-semibold mb-2">Categories</h4>
-        {categories.map((cat) => (
-          <div key={cat} className="form-control">
-            <label className="label cursor-pointer">
+        {/* Sort Order */}
+        <div>
+          <h4 className="font-semibold mb-2">Sort By</h4>
+          <div className="flex flex-col gap-2">
+            <label className="label cursor-pointer justify-start gap-2">
               <input
                 type="checkbox"
                 className="checkbox checkbox-sm"
-                checked={selectedCategories.includes(cat)}
-                onChange={() => toggleCategory(cat)}
+                checked={sortOrder === "lowToHigh"}
+                onChange={() => toggleSortOrder("lowToHigh")}
               />
-              <span className="label-text">{cat}</span>
+              <span className="label-text">Price: Low to High</span>
+            </label>
+            <label className="label cursor-pointer justify-start gap-2">
+              <input
+                type="checkbox"
+                className="checkbox checkbox-sm"
+                checked={sortOrder === "highToLow"}
+                onChange={() => toggleSortOrder("highToLow")}
+              />
+              <span className="label-text">Price: High to Low</span>
             </label>
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* Reset Button */}
-      <button
-        className="btn btn-outline btn-sm mt-4 w-full"
-        onClick={resetFilters}
-      >
-        Reset Filters
-      </button>
-    </aside>
+        {/* Categories */}
+        <div>
+          <h4 className="font-semibold mb-2">Categories</h4>
+          {categories.map((cat) => (
+            <div key={cat} className="form-control">
+              <label className="label cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="checkbox checkbox-sm"
+                  checked={selectedCategories.includes(cat)}
+                  onChange={() => toggleCategory(cat)}
+                />
+                <span className="label-text">{cat}</span>
+              </label>
+            </div>
+          ))}
+        </div>
+
+        {/* Reset Button */}
+        <button
+          className="btn btn-outline btn-sm mt-4 w-full"
+          onClick={resetFilters}
+        >
+          Reset Filters
+        </button>
+      </aside>
+    </>
   );
 };
 

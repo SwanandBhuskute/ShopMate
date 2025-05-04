@@ -27,13 +27,13 @@ const HeroSection = (props: { products: Product[] }) => {
               Luxury isn't just a choice — it's a lifestyle.
             </span>
           </p>
-          <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4 mt-6">
+          <div className="flex flex-row justify-center lg:justify-start gap-4 mt-6">
             <Link to="/products">
               <button className="btn bg-white-500 text-black border border-black text-lg px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-xl transform hover:scale-105 transition">
                 Shop Now
               </button>
             </Link>
-            <Link to="/about">
+            <Link to="/about-us">
               <button className="btn bg-black text-white text-lg px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-xl transform hover:scale-105 transition">
                 Learn More
               </button>
@@ -52,12 +52,13 @@ const HeroSection = (props: { products: Product[] }) => {
       </div>
 
       {/* Featured Products */}
-      <div className="text-center mt-20 px-2">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow">
-          Featured Premium Products
+      <div className="text-center text-black mt-20 px-2">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4 drop-shadow">
+          Featured Prem<span className="text-white text-3xl">ium Products</span>
         </h2>
-        <p className="text-lg sm:text-md italic text-gray-400 mb-10">
-          The finest pieces, handpicked for the refined shopper.
+        <p className="text-xl sm:text-md italic mb-10 font-semibold">
+          <span className="text-white text-2xl">The finest pieces, handpicked</span> for
+          the refined shopper
         </p>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -65,21 +66,21 @@ const HeroSection = (props: { products: Product[] }) => {
             <Link
               to={`/products/${product.id}`}
               key={product.id}
-              className="bg-black/60 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-xl hover:shadow-2xl transition-transform hover:scale-105 overflow-hidden cursor-pointer block"
+              className="bg-white backdrop-blur-lg border border-gray-700 rounded-2xl shadow-xl hover:shadow-2xl transition-transform hover:scale-103 overflow-hidden cursor-pointer block"
             >
               <figure className="relative w-full h-60 overflow-hidden">
                 <img
                   src={product.thumbnail}
                   alt={product.title}
-                  className="w-full h-full bg-yellow-100 object-contain opacity-100 filter saturate-150 transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full bg-orange-200 object-contain opacity-100 filter saturate-150 transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </figure>
               <div className="px-5 py-6 space-y-3 text-left">
-                <h2 className="text-xl font-semibold text-white drop-shadow-sm">
+                <h2 className="text-xl font-semibold drop-shadow-sm">
                   {product.title}
                 </h2>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm">
                   {product.description.slice(0, 100)}...
                 </p>
                 <div className="flex justify-between items-center pt-4">

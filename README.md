@@ -1,10 +1,8 @@
 # 🛒 ShopMate
 
-A simple and elegant e-commerce frontend built with modern web technologies.
+An elegant e-commerce built with modern web technologies.
 
-## 🔗 Live Demo
-
-[Visit ShopMate](https://shop-mate-nfwx-ll4uxnu3q-swanand-bhuskutes-projects.vercel.app/)
+## 🔗 [Live Demo - Visit ShopMate] (https://shop-mate-nfwx-ll4uxnu3q-swanand-bhuskutes-projects.vercel.app/)
 
 ## 🧾 About
 

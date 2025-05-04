@@ -24,12 +24,12 @@ const Navbar: React.FC = () => {
 
       {/* Desktop Links */}
       <div className="hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-white text-lg">
+        <ul className="menu menu-horizontal px-2 text-white text-lg">
           <li>
-            <Link to={"/about-us"}>About Us</Link>
+            <Link to={"/about-us"}>Our Story</Link>
           </li>
           <li>
-            <Link to={"/products"}>Products</Link>
+            <Link to={"/products"}>Discover</Link>
           </li>
         </ul>
       </div>
@@ -56,13 +56,13 @@ const Navbar: React.FC = () => {
           className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-content rounded-box w-35 text-white"
         >
           <li>
-          <Link to={"/"}>Home</Link>
+          <Link to={"/"}>Explore</Link>
           </li>
           <li>
           <Link to={"/about-us"}>Know Us</Link>
           </li>
           <li>
-            <a href="/products">Products</a>
+            <a href="/products">Discover</a>
           </li>
         </ul>
       </div>

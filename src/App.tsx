@@ -7,10 +7,13 @@ import ProductPage from "./pages/productPage/productPage";
 import HomePage from "./pages/homepage/homePage";
 import AboutPage from "./pages/aboutPage/aboutPage";
 
+import ScrollToTop from "./utils/scrollToTop";
+
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <main className="flex-grow">
           <Routes>

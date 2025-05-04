@@ -12,7 +12,7 @@ const ProductDetail = (props: {
   const relatedProducts: Product[] = props.relatedProducts;
 
   return (
-    <div className="text-white p-4">
+    <div className="p-4">
       {/* Main Product Section */}
       <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
@@ -33,7 +33,7 @@ const ProductDetail = (props: {
               <span className="text-3xl font-bold text-black">
                 ${product.price}
               </span>
-              {/* <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-full text-lg shadow-md transition-all duration-300">
+              {/* <button className="bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-full text-lg shadow-md transition-all duration-300">
                 Buy Now
               </button> */}
             </div>
@@ -123,7 +123,7 @@ const ProductDetail = (props: {
         </div>
 
         {/* Reviews */}
-        <div className="mt-20">
+        <div className="mt-5 py-10">
           <h2 className="text-2xl font-bold mb-6">Customer Reviews</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {product.reviews.map((review, idx) => (
@@ -162,7 +162,7 @@ const ProductDetail = (props: {
 
       {/* Related Products */}
       <section className="mb-6">
-        <div className="max-w-7xl mx-auto text-center mb-12">
+        <div className="max-w-7xl mx-auto text-center mb-12 py-4 border-t-2 ">
           <h3 className="text-4xl font-extrabold">
             You might also like
           </h3>
