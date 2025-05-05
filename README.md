@@ -4,8 +4,7 @@ An elegant e-commerce built with modern web technologies.
 
 ## 🔗 [Live Demo]
 
-[Visit ShopMate](https://shop-mate-nfwx-ll4uxnu3q-swanand-bhuskutes-projects.vercel.app/) <br />
-[Visit ShopMate](https://shop-mate-gilt.vercel.app/)
+[Visit ShopMate](https://shop-mate-gilt.vercel.app/) <br />
 
 ## 🧾 About
 
